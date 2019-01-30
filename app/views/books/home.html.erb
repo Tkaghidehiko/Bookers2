@@ -1,0 +1,18 @@
+<div class="container">
+	<h1>welcom to <span class="glyphicon glyphicon-tree-deciduous" aria-hidden="true"></span>Bookers !!</h1>
+	<p>In <span class="glyphicon glyphicon-tree-deciduous" aria-hidden="true"></span>Bookers,<br>you can share and exchange your opinions , inpressions , and emotions<br>about varioius books!
+	</p>
+	<% if user_signed_in? %>
+	<button class="btn btn-link">
+	<%= link_to "Log In", user_path(current_user.id), class: "book_#{current_user.id}" %>
+	</button>
+	<% else %>
+	<button class="btn btn-link">
+	<%= link_to "Log In", new_user_session_path, class: "sign_in" %>
+	</button>
+
+	<% end %>
+	<br>
+	<button class="btn btn-link">
+	<%= link_to "Sign Up", new_user_registration_path, class: "sign_up" %>
+	</button>
